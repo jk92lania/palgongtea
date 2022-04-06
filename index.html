@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UACompatible" content="IE=edge">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images//favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images//favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="/images//favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="/images//favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>팔공티</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <script src="js/swiper/swiper.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- 클론코드 관련 안내 -->
+    <div class="modal">
+        <div class="modal-wrap">
+            <img src="images/warning_icon.png" alt="경고" class="modal-warnig">
+            <b>
+                이 사이트는 스터디용으로 제작되었으며 리소스는 
+            </b>
+            <a href="https://www.klia.or.kr/" target="_blank" class="modal-origin">
+                원저작자
+                <img src="images/original.png" alt="원사이트">
+            </a>
+            <b>에게 있습니다.
+                본 사이트는 Chrome에 최적화 되어있습니다.</b>
+            <div class="modal-desc clearfix">
+                <p>제작 기간 : 10일</p>
+                <div class="modal-label-wrap">
+                    <span class="modal-label modal-html">html</span>                
+                    <span class="modal-label modal-css">css</span>                
+                    <span class="modal-label modal-js">js</span>                
+
+                </div>                
+            </div>
+            <div class="modal-close">닫기</div>
+        </div>
+    </div>
+
+    <!-- 메뉴 자세히 보기 -->
+    <div class="popup-menu">
+        <div class="popup-menu-wrap clearfix">
+            <div class="popup-menu-close">
+                <img src="images/ico_close.png" alt="닫기">
+            </div>
+            <div class="menu-img popup-menu-img">
+                <span class="menu-img-bg popup-menu-img-bg">
+                    <img src="images/menu_militea.png" alt="밀크티">
+                </span>
+                <img src="images/menu_001.png" alt="블랙밀크티" class="menu-img-main popup-menu-img-main">
+            </div>
+
+            <div class="popup-menu-info">
+                <h3 class="popup-menu-name">블랙밀크티(ICE)</h3>
+                <span class="popup-menu-new">new</span>
+                <p>진하고 감미로운 홍차와 쫀득한 타피오카 펄이 어우러진 밀크티</p>
+                <div class="popup-menu-size">
+                    <dl class="popup-menu-size-basic">
+                        <dt>기본</dt>
+                        <dd>2000원</dd>
+                    </dl>
+                    <dl class="popup-menu-size-big">
+                        <dt>빅사이즈</dt>
+                        <dd>3000원</dd>
+                    </dl>
+                </div>
+                <div class="popup-menu-nutrition">
+                    <h3>제품영양정보</h3>
+                    <div class="nutrition-table">
+                        <table>
+                            <tbody>
+                                <tr>                                                        
+                                    <th>영양정보</th>
+                                    <th>기본</th>
+                                    <th>빅사이즈</th>
+                                    <th></th>
+                                    <th>기본</th>
+                                    <th>빅사이즈</th>
+                                </tr>
+                                <tr>
+                                    <th>열량(kcal)</th>
+                                    <td>226</td> 
+                                    <td>329.3</td>
+                                    <th>나트륨(mg)</th>
+                                    <td>116</td>
+                                    <td>169.4</td>
+                                </tr>
+                                <tr>
+                                    <th>포화지방(g)</th>
+                                    <td>9</td>
+                                    <td>12.4</td>
+                                    <th>당류(g)</th>
+                                    <td>13</td>
+                                    <td>19.6</td>
+                                </tr>
+                                <tr>
+                                    <th>단백질(g)</th>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <th>카페인(mg)</th>
+                                    <td>114</td>
+                                    <td>165.8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <dl class="serving_size">
+                        <dt>.1회 제공분 기준(g) : </dt>
+                        <dd>498</dd>
+                    </dl>
+                    <dl class="allergy">
+                        <dt>.알레르기 성분정보 : </dt>
+                        <dd>우유</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="wrap">
+        <!-- 상단 -->
+        <header class="header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.jpg" alt="팔공티">
+                </a>
+                <div class="link-wrap">
+                    <a href="#" class="link-owner">
+                        <img src="images/ico_owner.png" alt="점주님 공간">
+                    </a>
+                    <a href="#" class="link-facebook">
+                        <img src="images/ico_facebook.png" alt="facebook">
+                    </a>
+                    <a href="#" class="link-insta">
+                        <img src="images/ico_instagram.png" alt="instagram">
+                    </a>
+                    <a href="#" class="link-blog">
+                        <img src="images/ico_blog.png" alt="blog">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">브랜드 소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">팔공티 소개</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">오시는길</a></li>
+                                <li><a href="#">해외사업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">메뉴</a>
+                            <ul class="submenu">
+                                <li><a href="#">음료 주문방법</a></li>
+                                <li><a href="#">티 컬렉션</a></li>
+                                <li><a href="#">시즌메뉴</a></li>
+                                <li><a href="#">신메뉴</a></li>
+                                <li><a href="#">음료</a></li>
+                                <li><a href="#">디저트</a></li>
+                                <li><a href="#">MD</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">창업문의</a>
+                            <ul class="submenu">
+                                <li><a href="#">가맹절차</a></li>
+                                <li><a href="#">인테리어</a></li>
+                                <li><a href="#">가맹비용</a></li>
+                                <li><a href="#">추천 가맹점</a></li>
+                                <li><a href="#">가맹상담신청</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">매장안내</a>
+                            <ul class="submenu">
+                                <li><a href="#">국내 매장</a></li>
+                                <li><a href="#">해외 매장</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">멤버쉽</a>
+                            <ul class="submenu">
+                                <li><a href="#">팔공티 APP</a></li>
+                                <li><a href="#">팔공티 카드</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">팔공티 소식</a>
+                            <ul class="submenu">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">고객문의</a>
+                        </li>
+                        <li>
+                            <a href="#">브랜드 제휴</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="newstore-info">
+                    <img src="images/ico_store.png" alt="가맹점개설문의">
+                    <h3>가맹점 개설문의</h3>
+                    <p>1577-8246</p>
+                </div>
+            </div>
+            <div class="submenu-bg"></div>
+        </header>
+        <!-- //상단 -->
+        <div class="main">
+            <!-- 비주얼 -->
+            <section class="visual">
+                <div class="swiper-container sw-visual">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/visual_001.png" alt="배너">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/visual_002.jpg" alt="배너">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/visual_003.jpg" alt="배너">
+                        </div>
+                    </div>
+                    <button class="swiper-button-prev sw-visual-prev"></button>
+                    <button class="swiper-button-next sw-visual-next"></button>
+                    <div class="swiper-pagination sw-pg sw-visual-pg"></div>
+                </div>
+            </section>
+            <!-- //비주얼 -->
+            <!-- 차메뉴 -->            
+            <section class="teamenu">
+                
+                <div class="container">
+                    <div class="teamenu-top title">
+                        <h2 class="teamenu-title">palgongtea <em>menu</em></h2>
+                        <p>팔공티의 다양한 차와 디저트</p>
+                    </div>
+                    <div class="teamenu-wrap">
+                        <div class="swiper-container sw-menu">
+                            <div class="swiper-wrapper">
+
+                                <!-- slide 샘플 -->
+                                <!-- <div class="swiper-slide">
+                                    <div class="menu-img teamenu-img">
+                                        <span class="menu-img-bg teamenu-img-bg">
+                                            <img src="images/menu_militea.png" alt="밀크티">
+                                        </span>
+                                        <img src="images/menu_001.png" alt="블랙밀크티" class="menu-img-main teamenu-img-main">
+                                    </div>
+                                    <div class="teamenu-name">
+                                        블랙밀크티(ice)
+                                    </div>
+                                    <a href="#" class="btn-more menu-more">
+                                        자세히보기
+                                    </a>
+                                </div> -->                                
+                            </div>
+                            <button class="swiper-button-prev sw-menu-prev"></button>
+                            <button class="swiper-button-next sw-menu-next"></button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- //차메뉴 -->
+            <!-- 팔공티 소개 -->
+            <section class="palgongtea">
+                <div class="container">
+                    <div class="title pal-title">
+                        <h2>“차가 가장 맛있는 팔공티”</h2>
+                        <p>
+                            세계의 유명한 차 산지국에서 최적의 기온과 기상조건을 갖추어 엄선된 차를 신선하게 마실 수 있는 '스페셜 티 브랜드'
+                            현지의 티 마스터들이 팔공티만의 엄선된 차를 만들기 위해 철저하게 관리하고 노력하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="pal-link-menu">
+                        <span>menu</span>
+                    </div>
+                </div>
+            </section>
+            <!-- //팔공티 소개 -->
+            <!-- 팔공티 광고 -->
+            <section class="commercial">
+            </section>
+            <!-- //팔공티 광고 -->
+            <!-- 가맹점 문의 -->
+            <section class="franchise">
+                <div class="container">
+                    <div class="title fran-title">
+                        <h2>가맹점 개설문의</h2>
+                        <p>1577-8246</p>
+                    </div>
+                    <ul class="fran-list">
+                        <li>
+                            <a href="#">
+                                <i></i>
+                                <h3>가맹절차</h3>
+                                <em></em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i></i>
+                                <h3>가맹비용</h3>
+                                <em></em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i></i>
+                                <h3>인테리어</h3>
+                                <em></em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i></i>
+                                <h3>가맹상담</h3>
+                                <em></em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- //가맹점 문의 -->
+            <!-- 신규매장 -->
+            <section class="newstore">
+                <div class="container">
+                    <div class="title store-title">
+                        <h2>팔공티 <em>신규 오픈매장</em></h2>
+                        <p>
+                            팔공티의 새롭게 오픈한 매장을 확인하세요!
+                        </p>
+                    </div>
+                    <div class="storeslide">
+                        <div class="swiper-container sw-newstore">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_001.jpg" alt="팔공티 창원감계점">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 창원감계점</span>
+                                    <div class="btn-more slide-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_002.jpg" alt="팔공티 영진전문대점">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 영진전문대점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_003.jpg" alt="팔공티 효자점">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 효자점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_004.jpg" alt="팔공티 양산물금점">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 양산물금점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_005.jpg" alt="팔공티 아산공수점">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 아산공수점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_006.jpg" alt="Melbourne">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">Melbourne</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_007.jpg" alt="팔공티 용산아이파크몰점(Forest)">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 효자점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide-img newstore-img">
+                                        <img src="images/newstore_008.jpg" alt="팔공티 대구대">
+                                        <span></span>
+                                    </div>
+                                    <span class="slide-name newstore-name">팔공티 양산물금점</span>
+                                    <div class="btn-more newstore-more">자세히보기</div>
+                                </div>
+                                
+                            </div>
+                            <div class="swiper-pagination sw-pg sw-newstore-pg"></div>
+                            <button class="swiper-button-prev sw-newstore-prev"></button>
+                            <button class="swiper-button-next sw-newstore-next"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //신규매장 -->
+            <!-- 이용가이드 -->
+            <section class="quickguide">
+                <ul class="guidelist">
+                    <li>
+                        <h3>매장찾기</h3>
+                        <p>가까운 매장을 검색해보세요</p>
+                        <form action="" class="searchstore">
+                            <input type="text" placeholder="매장명 입력"  class="input-store-search">
+                            <input type="submit" value="검색" class="btn-store-search">
+                        </form>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="order-img"></i>
+                            <h3>음료주문 방법</h3>
+                            <p>
+                                팔공티 음료 주문하는
+                                <br>
+                                Tip을 알려드립니다. 
+                            </p>
+                        </a>                        
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="customer-img"></i>
+                            <h3>고객문의</h3>
+                            <p>
+                                팔공티에 궁금하신 점을 문의해주시면 
+                                <br>
+                                담당자가 확인 후 답변 드리겠습니다.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- //이용가이드 -->
+            <!-- 앱 -->
+            <section class="app">
+                <div class="container">
+                    <div class="app-box">
+                        <div class="app-left">
+                            <img src="images/ico_app.png" alt="앱">
+                        </div>
+                        <div class="app-right">
+                            <div class="app-title">
+                                <h2>팔공티 APP</h2>
+                                <span>준비중</span>
+                            </div>
+                            <p>팔공티 멤버쉽 앱으로 쉽고 빠르게 주문하실 수 있습니다.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- //앱 -->
+            <!-- 공지사항 -->
+            <section class="notice">
+                <div class="container">
+                    <div class="title notice-title">
+                        <h2>팔공티<em> 공지사항</em></h2>
+                    </div>
+                    <div class="swiper-container sw-notice">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="notice-box">
+                                    <div class="slide-img notice-img">
+                                        <img src="images/notice_001.jpg" alt="팔공티 곡물라떼 2종 출시">
+                                        <span></span>
+                                    </div>
+                                    <p>2022-02-16</p>
+                                    <span class="slide-name notice-name">팔공티 곡물라떼 2종 출시</span>
+                                    <div class="btn-more notice-more">view<i></i></div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="notice-box">
+                                    <div class="slide-img notice-img">
+                                        <img src="images/notice_002.jpg" alt="팔공티 2022년 딸기 신메뉴 출시">
+                                        <span></span>
+                                    </div>
+                                    <p>2022-01-26</p>
+                                    <span class="slide-name notice-name">팔공티 2022년 딸기 신메뉴 출시</span>
+                                    <div class="btn-more notice-more">view<i></i></div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="notice-box">
+                                    <div class="slide-img notice-img">
+                                        <img src="images/notice_003.jpg" alt="팔공티 서포터즈 에이티 4기 합격자 발표">
+                                        <span></span>
+                                    </div>
+                                    <p>2022-01-04</p>
+                                    <span class="slide-name notice-name">팔공티 서포터즈 에이티 4기 합격자 발표</span>
+                                    <div class="btn-more notice-more">view<i></i></div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="notice-box">
+                                    <div class="slide-img notice-img">
+                                        <img src="images/notice_004.jpg" alt="팔공티 서포터즈 에이티 3기 우수 서포터즈 발표">
+                                        <span></span>
+                                    </div>
+                                    <p>2021-12-28</p>
+                                    <span class="slide-name notice-name">팔공티 서포터즈 에이티 3기 우수 서포터즈 발표</span>
+                                    <div class="btn-more notice-more">view<i></i></div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="notice-box">
+                                    <div class="slide-img notice-img">
+                                        <img src="images/notice_005.jpg" alt="팔공티 서포터즈 에이티 4기 모집">
+                                        <span></span>
+                                    </div>
+                                    <p>2021-12-27</p>
+                                    <span class="slide-name notice-name">팔공티 서포터즈 에이티 4기 모집</span>
+                                    <div class="btn-more notice-more">view<i></i></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination sw-pg sw-notice-pg"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- //공지사항 -->
+        </div>
+        <!-- 하단 -->
+        <footer class="footer">
+            <div class="container">
+                <a href="#" class="f-logo">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+                <div class="f-info">
+                    <dl>
+                        <dt class="privacy">CONTACT INFO</dt>
+                        <dd class="privacy"><a href="#">개인정보취급방침</a></dd>                        
+                        <dt>사업자번호 </dt>
+                        <dd class="business-num">669-88-01126</dd>
+                        <dd>㈜팔공티 대표이사 김종현</dd>
+                        <dt>주소 : </dt>
+                        <dd>경기도 하남시 미사강변한강로 155 (망월동, 미사강변 SK V1 center), 901</dd>
+                        <dt>연락처 : </dt>
+                        <dd>02-6928-8286</dd>
+                        <dt>이메일 : </dt>
+                        <dd>palgongtea@palgongtea.com</dd>
+                        <dt>ⓒ 2021 PALGONG TEA All rights reserved.</dt>
+                    </dl>
+                </div>
+                <div class="f-opening">
+                    <dl>
+                        <dt class="open-tit">OPENING HOURS</dt>
+                        <dd>MON-FRI</dd>
+                        <dd>09:00 AM – 06:00 PM</dd>
+                        <dd>주말, 공휴일 휴무</dd>
+                    </dl>
+                    
+                </div>
+            </div>
+        </footer>
+        <!-- //하단 -->
+    </div>
+</body>
+
+</html>
