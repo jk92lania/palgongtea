@@ -556,6 +556,24 @@ body {
     font-weight: 200;
 }
 
+/* 퀵메뉴 */
+.quickmenu {
+    position: fixed;
+    right: 145px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    z-index: 99;
+}
+
+.quickmenu li {
+    margin-top: 14px;
+}
+
+.quickmenu li:first-child {
+    margin-top: 0;
+}
+
 
 .wrap {
     position: relative;
@@ -715,6 +733,7 @@ body {
     background-color: #0b5f3f;
     text-align: center;
     padding-top: 15px;
+    box-shadow: -3px 3px 3px 0px rgb(56 55 55 / 13%);
 }
 
 .newstore-info img {
@@ -733,6 +752,93 @@ body {
     color: #fff;
 }
 
+.mobile-btn {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    width: 34px;
+    height: 26px;
+
+    cursor: pointer;
+}
+
+.mobile-btn::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 34px;
+    height: 4px;
+
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.mobile-btn::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(-50%);
+    display: block;
+    width: 34px;
+    height: 4px;
+
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.mobile-btn span {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 27px;
+    height: 4px;
+
+    background-color: #000;
+    border-radius: 4px;
+    line-height: 0;
+    font-size: 0;
+}
+
+@media all and (max-width:1200px) {
+    .header .container {
+        width: 100%;
+    }
+    .logo {
+        width: 17.89%;
+    }
+    .logo img {
+        width: 100%;
+    }
+    .newstore-info {
+        width: 11.53%;
+    }
+}
+@media all and (max-width:1000px) {
+    .logo {
+        width: 278px;
+    }
+    .nav {
+        display: none;
+    }
+    .link-wrap {
+        display: none;
+    }
+    .newstore-info {
+        display: none;
+    }
+    .mobile-btn {
+        display: block;
+    }
+}
+
 .main {
     position: relative;
     display: block;
@@ -742,7 +848,6 @@ body {
 .visual {
     position: relative;
     display: block;
-    height: 894px;
 }
 
 .sw-visual {
