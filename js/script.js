@@ -6,6 +6,25 @@ window.onload = function(){
         modal.stop().fadeOut(200);
     });
 
+    // 퀵메뉴
+    let window_width = $(window).innerWidth();
+    $(window).resize(function(){
+        window_width = $(window).innerWidth();        
+    });
+    let qu_pos = $('.visual').outerHeight();
+    let quickmenu = $('.quickmenu');
+    $(window).scroll(()=>{
+        let now_pos = $(this).scrollTop();
+        console.log(qu_pos);
+        if(now_pos < qu_pos && window_width > 1200) {
+            quickmenu.stop().fadeIn(200);
+        }
+        else {
+            quickmenu.stop().fadeOut(200);
+        }
+        
+    });
+
     
     // 메뉴
     let submenu_bg = $('.submenu-bg');
@@ -345,13 +364,23 @@ window.onload = function(){
     sw_menu_wrapper.html(sw_menu_html);
 
     // 차메뉴 슬라이드
+    
     let sw_menu = new Swiper('.sw-menu', {
-        slidesPerView: 4,        
+        slidesPerView: 2,        
         navigation : {
             prevEl : '.sw-menu-prev',
             nextEl : '.sw-menu-next',
         },
         spaceBetween : 0,
+        breakpoints : {
+            1200 : {
+                slidesPerView: 4, 
+            },
+            750 : {
+                slidesPerView: 3, 
+
+            }
+        },
     });
 
     // 차메뉴 슬라이드 선택
@@ -371,19 +400,21 @@ window.onload = function(){
             // 모달창을 띄운다            
             popupMenuRemove();
             popupMenuCreate(index);
-            popup_menu.show();
+            popup_menu.show();            
+            $('body').css({'overflow' : 'hidden'});
+            
         });
     });
-
+    
     // 차메뉴 모달창
     let popup_menu_close = $('.popup-menu-close');
     let popup_menu = $('.popup-menu');
-    let popup_menu_wrap = popup_menu.find('.popup-menu-wrap');
     let nutrition = $('.nutrition-table td');
-
+    
     popup_menu_close.click(function(){
         popup_menu.hide();
         popupMenuRemove();
+        $('body').css({'overflow' : 'auto'});
     });
 
     function popupMenuCreate(_index){
@@ -423,7 +454,7 @@ window.onload = function(){
         nutrition.eq(10).html(sw_menu_data[_index].caffeine_basic);
         nutrition.eq(11).html(sw_menu_data[_index].caffeine_big);
         
-        $('.serving_size dd').html(sw_menu_data[_index].serving_size);
+        $('.serving-size dd').html(sw_menu_data[_index].serving_size);
         $('.allergy dd').html(sw_menu_data[_index].allergy); 
         
     };
@@ -442,7 +473,7 @@ window.onload = function(){
 
     // 신규 오픈매장 슬라이드
     let sw_newstore = new Swiper('.sw-newstore', {
-        slidesPerView: 4,
+        slidesPerView: 2,
         spaceBetween : 52,
         slidesPerGroup : 4,
         pagination : {
@@ -451,6 +482,15 @@ window.onload = function(){
         navigation : {
             prevEl : '.sw-newstore-prev',
             nextEl : '.sw-newstore-next',
+        },
+        breakpoints : {
+            1200 : {
+                slidesPerView: 4, 
+            },
+            750 : {
+                slidesPerView: 3, 
+
+            }
         },  
     });
 
@@ -459,6 +499,10 @@ window.onload = function(){
     let newstore_img_w = newstore_img.width();
     let newstore_ratio = 1.24;
     $('.newstore-img').css('height', newstore_img_w * newstore_ratio);
+    $(window).resize(function(){
+        newstore_img_w = newstore_img.width();        
+        $('.newstore-img').css('height', newstore_img_w * newstore_ratio);
+    });
     
     
     // 신규 오픈매장 선택
@@ -483,11 +527,20 @@ window.onload = function(){
 
     // 공지사항 슬라이드
     let sw_notice = new Swiper('.sw-notice', {
-        slidesPerView: 4,
+        slidesPerView: 2,
         spaceBetween : 20,
         pagination : {
             el : '.sw-notice-pg',
-        },         
+        },
+        breakpoints : {
+            1200 : {
+                slidesPerView: 4, 
+            },
+            750 : {
+                slidesPerView: 3, 
+
+            }
+        },          
     });
 
 
@@ -497,14 +550,22 @@ window.onload = function(){
     let notice_img_w = notice_img.width();
     let notice_ratio = 0.85;
     $('.notice-img').css('height', Math.abs(notice_img_w * notice_ratio));
+    $(window).resize(function(){
+        notice_img_w = notice_img.width();        
+        $('.notice-img').css('height', Math.abs(notice_img_w * notice_ratio));
+        
+    });
 
 
     // 공지사항 슬라이드 애니메이션
     let notice_box = $('.notice-box');
     $.each(notice_box, function(index, item){
         $(this).mouseenter(function(event){
-            $(this).addClass('notice-box-active');           
-            notice_img.eq(index).find('span').addClass('opa-see');
+            if(window_width > 750) {
+                $(this).addClass('notice-box-active');          
+                notice_img.eq(index).find('span').addClass('opa-see');
+
+            }
         });
         $(this).mouseleave(function(event){
             $(this).removeClass('notice-box-active');           
