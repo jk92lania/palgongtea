@@ -30,6 +30,7 @@ html {
 body {
     font-size: 1rem;
     font-family: 'Noto Sans KR', sans-serif;
+    word-break: keep-all;
 }
 
 /* 공통요소 */
@@ -1994,6 +1995,9 @@ body {
     .sw-notice-pg {
         bottom: 5.33vw !important;
     }
+    .notice-box {
+        margin-bottom: 0;
+    }
     .notice-box p {
         margin-bottom: 1.33vw;
         font-size: 2.4vw;
@@ -2005,47 +2009,57 @@ body {
 
 /* 하단 */
 .footer {
+    padding: 48px 0;
     background-color: #0b5f3f;
 }
 
 .footer .container {
-    display: table;
-    padding: 50px 0;
+    height: 100%;
 }
 
-.f-logo {
-    display: table-cell;
-    vertical-align: middle;
+.footer-wrap {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+        
 }
 
-.f-info {
-    display: table-cell;
+.f-logo img {
+    width: 100%;
 }
 
-.footer dl {
+.f-list {
     position: relative;
     display: block;
+    padding-left: 7.07%;
     color: #fff;
+    vertical-align: top;
+}
+
+
+.footer dt,
+.footer dd {
+    position: relative;
+    display: block;
+    opacity: 0.6;
+    font-size: 14.5px;
+    font-weight: 200;
+    line-height: 1.8;
+    word-wrap: break-word;
+    white-space: nowrap;
 }
 
 .footer dt {
     float: left;
 }
 
-.footer dt,
-.footer dd {
-    opacity: 0.6;
-    font-size: 14.5px;
-    font-weight: 200;
-    line-height: 1.8;
-}
 
 .privacy {
-    margin-bottom: 16px;
     font-size: 16px !important;
     line-height: 1.4 !important;
     font-weight: 700 !important;
     opacity: 1 !important;
+    margin-bottom: 16px;
 }
 
 .privacy a {
@@ -2058,9 +2072,20 @@ body {
 }
 
 .f-opening {
-    display: table-cell;
-    padding-left: 82px;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 14.3%; 
+    vertical-align: top;   
+}
+
+.f-opening::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+
 }
 
 .open-tit {
@@ -2069,4 +2094,21 @@ body {
     line-height: 1.4 !important;
     font-weight: 700 !important;
     opacity: 1 !important;
+    margin-bottom: 16px;
+}
+
+@media all and (max-width:1200px) {
+    
+    .footer .container {
+        width: 100vw;
+        padding: 0 40px;
+    }    
+
+    .footer dt,
+    .footer dd {
+        white-space:normal;
+    }
+}
+@media all and (max-width:750px) {
+    
 }
