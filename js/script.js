@@ -371,7 +371,7 @@ window.onload = function(){
             prevEl : '.sw-menu-prev',
             nextEl : '.sw-menu-next',
         },
-        spaceBetween : 0,
+        spaceBetween : 10,
         breakpoints : {
             1200 : {
                 slidesPerView: 4, 

@@ -199,12 +199,14 @@ body {
     }
 }
 @media all and (max-width:750px) {
-    .btn-more {
-         width: 11.2vw !important;
-         height: 4.4vw !important;
-         font-size: 2.4vw !important;
-         line-height: 4.13vw !important;
-         border-radius: 2.2vw !important;
+    .btn-more {        
+         width: 17.2vw;
+         height: 6.4vw;
+         font-size: 2.67vw;
+         line-height: 6.4vw;
+         border-radius: 0;
+         border: 0.27vw solid #ececec;
+         margin: 3.33vw auto 0;
     }
 }
 
@@ -966,6 +968,38 @@ body {
         display: block;
     }
 }
+@media all and (max-width:768px) {
+    .header {
+        height: 12vw;
+    }
+    .header .container {
+        padding: 0 40px;
+    }
+    .logo {
+        left: 40px;
+        top: 50%;
+        width: 37.07vw;
+    }
+    .mobile-btn {
+        width: 4.53vw;
+        height: 3.47vw;
+    }
+    .mobile-btn span {
+        width: 3.6vw;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .mobile-btn::after {
+        width: 4.53vw;
+        height: 2px;
+        border-radius: 2px;
+    }
+    .mobile-btn::before {
+        width: 4.53vw;
+        height: 2px;
+        border-radius: 2px;
+    }
+}
 
 .main {
     position: relative;
@@ -982,14 +1016,15 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    height: 100%;
 }
 
 .sw-visual img {
     width: 100%;
-    height: 100%;
 }
 
+.visual-mobile {
+    display: none;
+}
 
 .sw-visual-prev {
     left: 40px;
@@ -1011,6 +1046,33 @@ body {
     bottom: 40px !important;
     z-index: 1;
 }
+
+@media all and (max-width:1200px) {
+    .visual {
+        width: 100vw;
+    }
+}
+@media all and (max-width:768px) {
+    .sw-visual {
+        min-width: 100%;
+        width: 425px;
+    }
+    .sw-visual-next {
+        display: none;
+    } 
+    .sw-visual-prev {
+        display: none;
+    } 
+}
+@media all and (max-width:750px) {
+    .visual-pc {
+        display: none;
+    }
+    .visual-mobile {
+        display: block;
+    }
+}
+
 
 
 /* 메뉴 */
@@ -1101,10 +1163,26 @@ body {
 
 }
 
-
 @media all and (max-width:1200px) {
     .teamenu .container {
         width: 100vw;
+    }
+}
+@media all and (max-width:750px) {
+    .teamenu-wrap {
+        padding: 1vw;
+    }
+    .teamenu-img-bg img {
+        width: 100%;
+    }
+    .teamenu-name {
+        font-size: 3.47vw;
+    }
+    .sw-menu-prev {
+        display: none;
+    }
+    .sw-menu-next {
+        display: none;
     }
 }
 
@@ -1379,8 +1457,18 @@ body {
     }    
 }
 @media all and (max-width:750px) {
-    .fran-title h2 {
+    .franchise {
+        height: auto;
+    }
+    .franchise .container{
+        padding: 12.67vw 0 0;
+    }
+    .fran-title {
         font-size: 5.6vw;
+    }
+    .fran-title h2::after {
+        margin: 4vw auto 2.67vw;
+        width: 6vw;
     }
     .fran-title p {
         font-size: 6.93vw;
@@ -1494,8 +1582,11 @@ body {
     }
 }
 @media all and (max-width:750px) {
+    .newstore {
+        height: auto;
+    }
     .newstore .container {
-        padding: 184px 0 0;
+        padding: 11.33vw 0 0;
     }
 
     .store-title h2 {
@@ -2117,5 +2208,54 @@ body {
     }
 }
 @media all and (max-width:750px) {
-    
+    .footer .container {
+        padding: 0 5.33vw;
+    }
+    .footer-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    .f-logo {
+        width: 9.47vw;
+    }
+    .f-list {
+        padding: 0;
+    }
+    .f-list dt {
+        font-size: 2.93vw;
+    }
+    .f-list dd {
+        font-size: 2.93vw;
+    }
+    .f-info {
+        display: flex;
+        justify-content: center;
+    }
+    .privacy {
+        font-size: 3.73vw !important;
+    }
+    .f-info dt {
+        white-space: nowrap;
+    }
+    .f-info dd {
+        text-align: center;
+    }
+    .f-opening {
+        margin: 0;
+        display: flex;
+        white-space: nowrap;
+    }
+    .open-tit {
+        font-size: 3.73vw !important;
+    }
+    .f-opening dd {
+        font-size: 2.93vw;
+    }
+    .f-opening dt,
+    .f-opening dd{
+        white-space: nowrap;
+    }
+    .f-opening::after {
+        display: none;
+    }
 }
