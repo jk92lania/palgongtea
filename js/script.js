@@ -40,6 +40,46 @@ window.onload = function(){
         }
     });
 
+    // mobile menu
+    let mobile_btn = $('.mobile-btn');
+    let mobilemenu_close = $('.mobilemenu-close');
+    let mobilemenu = $('.mobilemenu');
+    mobile_btn.click(function(){
+        mobilemenu.addClass('mobilemenu-active');
+        $('html').addClass('scroll-stop');
+    });
+    mobilemenu_close.click(function(){
+        mobilemenu.removeClass('mobilemenu-active');
+        $('html').removeClass('scroll-stop');
+        mobilemenu_list_li_a.removeClass('mobilemenu-li-active');
+        mobilemenu_submenu.slideUp();
+    });
+
+    let mobilemenu_list_li_a = $('.mobilemenu-list > li > a');
+    let mobilemenu_submenu = $('.mobilemenu-submenu');
+    $.each(mobilemenu_list_li_a, function(index, item) {
+        $(this).click(function(){
+            if($(this).hasClass('mobilemenu-li-active')) {
+                mobilemenu_list_li_a.removeClass('mobilemenu-li-active');
+                mobilemenu_submenu.slideUp();
+            } else {
+                mobilemenu_list_li_a.removeClass('mobilemenu-li-active');
+                mobilemenu_submenu.slideUp();
+                $(this).addClass('mobilemenu-li-active');
+                mobilemenu_submenu.eq(index).slideDown();
+            }
+        });
+    });
+    $(window).resize(function(){
+        window_width = $(window).innerWidth();
+        if(window_width > 1200) {            
+            mobilemenu.removeClass('mobilemenu-active');
+            $('html').removeClass('scroll-stop');
+            mobilemenu_list_li_a.removeClass('mobilemenu-li-active');
+            mobilemenu_submenu.slideUp();
+        }
+    });
+
     
     // 메뉴
     let submenu_bg = $('.submenu-bg');
