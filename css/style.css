@@ -192,6 +192,12 @@ body {
     opacity: 1 !important;
 }
 
+.scroll-stop {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none;
+}
+
 @media all and (max-width:1200px) {
     .container {
          width: 100vw;
@@ -703,6 +709,95 @@ body {
     }
 }
 
+/* 모바일메뉴 */
+.mobilemenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 999;    
+}
+
+.mobilemenu-top {
+    position: relative;
+    display: block;
+    width: 100%;
+    
+    padding: 11.2vw 4vw 4.8vw;
+    font-size: 44px;
+    font-weight: 200;
+    color: #fff;
+    background-color: #1e874a;
+}
+
+.mobilemenu-close {
+    position: relative;
+    display: block;
+}
+
+.mobilemenu-top p {
+    position: relative;
+    display: block;
+}
+.mobilemenu-top p span {
+    font-weight: 700;
+}
+
+.mobilemenu-nav {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.mobilemenu-list {
+    position: relative;
+    display: block;
+    width: 100%;
+
+}
+.mobilemenu-list > li {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+.mobilemenu-list > li > a {
+    position: relative;
+    display: block;
+    height: 90px;
+
+    padding: 0 40px;
+    line-height: 90px;
+    font-size: 32px;
+    font-weight: 500;
+    background: url('../images/ico_down.png') no-repeat center right 40px;
+    background-size: 30px auto;
+}
+
+.mobilemenu-submenu {
+    position: relative;
+    display: block;
+    padding: 3.5vw 4vw;
+    background-color: #008755;
+}
+.mobilemenu-submenu li {
+    position: relative;
+    display: block;
+}
+.mobilemenu-submenu li a {
+    position: relative;
+    display: block;
+    padding: 0 0 0 35px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: 200;
+    color: #fff;
+}
 
 .wrap {
     position: relative;
