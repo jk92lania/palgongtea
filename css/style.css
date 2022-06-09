@@ -831,6 +831,19 @@ body {
     color: #fff;
 }
 
+.mobilemenu-submenu li a::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
 .mobilemenu-li-active {
     background-image: url('../images/ico_up.png') !important;
 }
@@ -876,9 +889,31 @@ body {
 
     }
     .mobilemenu-list > li > a {
+        height: 12vw;
         font-size: 4.27vw;
         background-size: 4vw auto;
         line-height: 12vw;
+    }
+    .mobilemenu-submenu li a {
+        padding: 0 0 0 4.67vw;
+        height: 6.67vw;
+        line-height: 6.67vw;
+        font-size: 3.73vw;
+    }
+    .mobilemenu-submenu li a::before {
+        left: 2.13vw;
+        width: 0.53vw;
+        height: 0.53vw;
+    }
+    
+    .mobilemenu-link-wrap a {
+        margin-right : 4.93vw;
+        width: 9.47vw;
+        height: 9.47vw;
+    }
+
+    .mobilemenu-link-wrap a:first-child {
+        margin-left :  4.93vw;
     }
 }
 
@@ -2420,6 +2455,7 @@ body {
     }
     .f-opening {
         margin: 0;
+        margin-top: 5.33vw;
         display: flex;
         white-space: nowrap;
     }
